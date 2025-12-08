@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One Mart - Your Local E-shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="heading">
+          <img  src="/Front-end/logo.png" alt="" width="30px">
+          <h1>One Mart</h1>
+        </div>
+
+        <p class="tag">All type of goods — fresh & trusted</p>
+      </div>
+      <div class="controls">
+        <input id="searchInput" class="search" placeholder="Search products..." />
+        <button id="cartToggle" class="btn icon">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+
+    <nav class="category-bar container">
+      <button class="cat-btn active" data-cat="All">All</button>
+      <button class="cat-btn" data-cat="Food">Food</button>
+      <button class="cat-btn" data-cat="Grocery">Grocery</button>
+      <button class="cat-btn" data-cat="Clothing">Clothing</button>
+    </nav>
+  </header>
+
+  <main class="container main">
+    <section class="products-grid" id="productsGrid" aria-live="polite"></section>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <aside class="cart-sidebar" id="cartSidebar" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" class="btn">Close</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="totals">
+        <div>Total:</div>
+        <div id="cartTotal">PKR 0</div>
+      </div>
+      <button id="checkoutBtn" class="btn primary">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="btn icon">✕</button>
+      <img id="modalImg" src="" alt="" />
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="price" id="modalPrice"></div>
+        <div class="modal-actions">
+          <label>Quantity:
+            <input id="modalQty" type="number" min="1" value="1" />
+          </label>
+          <button id="addModalCart" class="btn primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© One Mart — Local business support. Contact: +92 300 0000000</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
